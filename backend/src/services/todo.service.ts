@@ -16,7 +16,9 @@ export default class TodoService {
 
   async findById(user: User, id: string) {
     const todo = await Todo.findOne({ where: { id } });
-    if (!todo || !(!todo.isPrivate || user.id.toString() === todo.creator)) return;
+    if (!todo || !(!todo.isPrivate || user.id.toString() === todo.creator)) {
+      return;
+    }
     return { todo };
   }
 

@@ -4,7 +4,7 @@ import { IQueryParams, bages } from '../types/params.type';
 import { Todo } from '../entities/Todo';
 
 interface IGetRequestForDB {
-  (params: IQueryParams, creator: string): FindManyOptions<Todo>;
+  (params: IQueryParams, creator: string): FindManyOptions<Todo> | null;
 }
 
 export const getRequestForDB: IGetRequestForDB = (queryParams, creator) => {
@@ -43,6 +43,8 @@ export const getRequestForDB: IGetRequestForDB = (queryParams, creator) => {
           skip: (page - 1) * limit,
           take: limit
         };
+      default:
+        return null;
     }
   }
 
@@ -85,5 +87,7 @@ export const getRequestForDB: IGetRequestForDB = (queryParams, creator) => {
         skip: (page - 1) * limit,
         take: limit
       };
+    default:
+      return null;
   }
 };
