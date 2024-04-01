@@ -15,6 +15,8 @@ function getSSLConfig(env: string) {
   return configs[env];
 }
 
+
+
 const options: DataSourceOptions = {
   // type: 'mariadb',
   type: 'postgres',

@@ -12,6 +12,8 @@ const app = express();
 const router = new AppRouter(app);
 connectDB();
 
+
+
 // Express configuration
 app.set('port', process.env.PORT || 4200);
 app.use(cors({ origin: '*' }));
