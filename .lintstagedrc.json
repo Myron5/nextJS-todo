@@ -1,4 +1,5 @@
 {
   "backend/**/*.ts": "npx eslint",
-  "frontend/**/*.{ts,tsx}": "npx eslint"
+  "frontend/**/*.{ts,tsx}": "npx eslint",
+  "*": "npx prettier --write"
 }
